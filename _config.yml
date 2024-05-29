@@ -1,7 +1,7 @@
 title: George Assaad # The title of the blog
 author: George Assaad # Your name
 email: 0xgeorgeassaad@gmail.com # your email shown in the footer
-url: https://0xgeorgeassaad.github.io # this is your site's root address.
+url: https://0xgeorgeassaad.tech # https://0xgeorgeassaad.github.io # this is your site's root address.
 description: > # this means to ignore newlines until "show_excerpts:"
   
 favicon: "./favicon.ico" # set the favicon of the site
