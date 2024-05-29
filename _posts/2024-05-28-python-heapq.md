@@ -7,9 +7,9 @@ categories: misc
 
 ### Difference between Priority Queue and Heap
 
-It's important to note the difference between Priority Queue and Heap. Priority Queue is an _abstract data-type_ that supported a specified set of operations but can be implemented using various data structures. 
+It's important to note the difference between Priority Queue and Heap. Priority Queue is an _abstract data-type_ that supports a specified set of operations but can be implemented using various data structures. 
 
-A priority queue is a similar to a normal queue with the only diffence being that the order is which elements are removed from the queue depends on their prioirty not their time of arrival (addition), and as such, the data inserted into a priority queue must be comparable so that they can ordered from least to greatest or vice versa.
+A priority queue is similar to a normal queue with the only difference being that the order in which elements are removed from the queue depends on their priority not their time of arrival (addition), and as such, the data inserted into a priority queue must be comparable so that they can be ordered from least to greatest or vice versa.
 
 
 A priority queue supports the following set of operations:
