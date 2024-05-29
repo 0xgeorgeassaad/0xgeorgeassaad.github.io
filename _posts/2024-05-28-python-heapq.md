@@ -14,9 +14,9 @@ A priority queue is similar to a normal queue with the only difference being tha
 
 A priority queue supports the following set of operations:
 
-- `is_empty()`: check whether the queue has no elements
+- `is_empty()`: checks whether the queue has no elements
 - `add(elem, prio)`: adds an element with a specified priority to the queue
-- `poll()`: removes the element from the queue with highest priority
+- `poll()`: removes the element with highest priority from the queue 
 
 A priority queue can be implemented using a list, but it will be very inefficient. That's why we will implement it using a heap which is a tree-based data structure that satisfies the heap invariant[^1].
 
