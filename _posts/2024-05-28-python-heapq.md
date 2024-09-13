@@ -162,7 +162,7 @@ Now, Let's see why it's efficient.
 
 Thus, the total runtime is $$ \log(k) + (n-k) \log(k)+  k \log(k) = (n+1)\log(k) \approx O(n\log(k))$$ and $$O(k)$$ memory.
 
-We see second approach is better:
+We see that the second approach is better:
 - memory: $$O(k) < O(n)$$
 - time: $$O(n\log(k)) < O(n+ k\log(n))$$ 
 
