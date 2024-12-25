@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Linear Algebra Part 01: Identities | George Assaad</title>
+<meta name="keywords" content="misc, math">
+<meta name="description" content="Fundamental identities of Linear Algebra.">
+<meta name="author" content="George Assaad">
+<link rel="canonical" href="http://localhost:1313/posts/2024-07-19-la-01/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e690afcd5c523330d5c8b4d746eb158361600a015e99518d4d246a6ccab0cc19.css" integrity="sha256-5pCvzVxSMzDVyLTXRusVg2FgCgFemVGNTSRqbMqwzBk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2024-07-19-la-01/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Linear Algebra Part 01: Identities" />
+<meta property="og:description" content="Fundamental identities of Linear Algebra." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/2024-07-19-la-01/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-07-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-07-19T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linear Algebra Part 01: Identities"/>
+<meta name="twitter:description" content="Fundamental identities of Linear Algebra."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linear Algebra Part 01: Identities",
+      "item": "http://localhost:1313/posts/2024-07-19-la-01/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linear Algebra Part 01: Identities",
+  "name": "Linear Algebra Part 01: Identities",
+  "description": "Fundamental identities of Linear Algebra.",
+  "keywords": [
+    "misc", "math"
+  ],
+  "articleBody": "Linear Algebra is so interesting and so fun. In this post, we are gonna explore some of its most important identities with proofs and also shed the light on some interesting and closely related results.\nDefinitions of Scalars, Vector, and Matrices Scalars: Scalars are numerical values from $\\mathbb{R}$ Vectors: Vectors are arrays of scalars where one of the dimensions is 1. A $1 \\times d$ is called a row vector, whereas a $d \\times 1$ is called a column vector. The entries in a vector are called “components”. Matrices: Matrices are the logical extension of vectors and can be thought of as rectangular arrays of scalars. To get an element inside the matrix, one has to define the row $i$ and column $j$ to obtain element $a_{ij}$ from matrix $A = [a_{ij}]_{n \\times d}$ Operations with Scalars and Vectors Let 2 $d-$dimensional vectors be $\\bar x = [x_1 \\dots x_d]$ and $\\bar y = [y_1 \\dots y_d]$. They can be added component-wise as such:\n$$ \\bar x + \\bar y = [x_1 + y_1 \\dots x_d + y_d] $$\nand subtracted in the same way\n$$ \\bar x - \\bar y = [x_1 - y_1 \\dots x_d - y_d] $$\nA scalar $a$ can be multiplied by vector as such:\n$$ a\\bar x = [ax_1 \\dots ax_d] $$\nThe dot product is defined as the sum of the component-wise multiplication:\n$$ \\bar x \\cdot \\bar y = \\sum_{i=1}^{d} x_i y_i $$\nThe Euclidean norm is defined in terms of the dot product\n$$ \\lVert \\bar x \\rVert^2 = \\bar x \\cdot \\bar x = \\sum_{i=1}^{d} x_i^2 $$\nThe Euclidean norm is called the $L_2$-norm which can be generalized to any $L_p$-norm as follows\n$$ \\lVert \\bar x \\rVert_p = \\bar x \\cdot \\bar x = \\left( \\sum_{i=1}^{d} |x_i|^p \\right)^{(1/p)} $$\nThe dot product satisfies the Cauchy-Schwarz inequality which sets an upper bound for the value of the dot product\n$$ \\lvert \\bar x \\cdot \\bar y \\rvert \\leq \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert $$\nProof: Let $\\bar x^\\prime$ and $\\bar y^\\prime$ be unit vectors constructed from $\\bar x$ and $\\bar y$ such that $$ \\bar x^\\prime = \\dfrac{\\bar x}{\\lVert \\bar x \\rVert} $$ and $$ \\bar y^\\prime = \\dfrac{\\bar y}{\\lVert \\bar y \\rVert} $$\nWe show that $\\lvert \\bar x^\\prime \\cdot \\bar y^\\prime \\rvert \\leq 1$ by calculating $\\lVert \\bar x^\\prime - \\bar y^\\prime \\rVert^2$ and $\\lVert \\bar x^\\prime + \\bar y^\\prime \\rVert^2$ as such\n$$ \\begin{align*} \\lVert \\bar x^\\prime - \\bar y^\\prime \\rVert^2 \u0026= (\\bar x^\\prime - \\bar y^\\prime) \\cdot (\\bar x^\\prime - \\bar y^\\prime) = \\lVert \\bar x^\\prime \\rVert + \\lVert \\bar y^\\prime \\rVert - 2 \\bar x^\\prime \\cdot \\bar y^\\prime = 2 - 2 \\bar x^\\prime \\cdot \\bar y^\\prime \\\\ \\lVert \\bar x^\\prime + \\bar y^\\prime \\rVert^2 \u0026= (\\bar x^\\prime + \\bar y^\\prime) \\cdot (\\bar x^\\prime + \\bar y^\\prime) = \\lVert \\bar x^\\prime \\rVert + \\lVert \\bar y^\\prime \\rVert + 2 \\bar x^\\prime \\cdot \\bar y^\\prime = 2 + 2 \\bar x^\\prime \\cdot \\bar y^\\prime \\end{align*} $$\nSince both $\\lVert \\bar x^\\prime - \\bar y^\\prime \\rVert^2$ and $\\lVert \\bar x^\\prime + \\bar y^\\prime \\rVert^2$ are nonnegative, then $\\lvert \\bar x^\\prime \\cdot \\bar y^\\prime \\rvert \\leq 1$\nNow, we scale the unit vectors to obtain the general inequality\n$$ \\begin{align*} \\lvert \\bar x^\\prime \\cdot \\bar y^\\prime \\rvert \u0026\\leq 1 \\\\ \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert \\lvert \\bar x^\\prime \\cdot \\bar y^\\prime \\rvert \u0026\\leq \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert \\\\ \\lvert \\bar x \\cdot \\bar y \\rvert \u0026\\leq \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert \\end{align*} $$\nUsing the Cauchy-Schwarz inequality, we can also prove the triangle inequality which states that, in a triangle formed by $\\bar x$ and $\\bar y$, the side length of $\\lVert \\bar x - \\bar y \\rVert$ is no longer than the sum of the two other sides\n$$ \\lVert \\bar x - \\bar y \\rVert \\leq \\lVert \\bar x \\rVert + \\lVert \\bar y \\rVert $$\nProof: Since both sides of the triangle inequality are nonnegative, we only need to show that it still holds after squaring both sides.\n$$ \\begin{align*} \\lvert \\bar x \\cdot \\bar y \\rvert \u0026\\leq \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert \\\\ - \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert \u0026\\leq \\bar x \\cdot \\bar y \\leq \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert \\\\ \\bar x \\cdot \\bar y \u0026\\geq - \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert \\\\ -2\\bar x \\cdot \\bar y \u0026\\leq 2 \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert \\\\ \\lVert \\bar x \\rVert^2 + \\lVert \\bar y \\rVert^2 -2\\bar x \\cdot \\bar y \u0026\\leq \\lVert \\bar x \\rVert^2 + \\lVert \\bar y \\rVert^2+ 2 \\lVert \\bar x \\rVert \\lVert \\bar y \\rVert \\\\ (\\bar x - \\bar y) \\cdot (\\bar x - \\bar y) \u0026\\leq (\\lVert \\bar x \\rVert +\\lVert \\bar y \\rVert)^2 \\\\ (\\lVert \\bar x - \\bar y \\rVert)^2 \u0026\\leq (\\lVert \\bar x \\rVert + \\lVert \\bar y \\rVert)^2 \\end{align*} $$\nOperations with Vectors and Matrices The transpose of a matrix is obtained by flipping its rows and columns such that the $(i, j)th$ entry of the transpose is the same as the $(j, i)th$ entry of the original matrix. Therefore, the transpose of an $n \\times d$ matrix is a $d \\times n$ matrix. The transpose of a matrix $A$ is denoted by $A^T$. An example of the transpose of $A$ is shown:\n$$ \\begin{bmatrix} a_{11} \u0026 a_{12} \\\\ a_{21} \u0026 a_{22} \\end{bmatrix}^T = \\begin{bmatrix} a_{11} \u0026 a_{21} \\\\ a_{12} \u0026 a_{22} \\end{bmatrix} $$\nIt immediately follows that $(A^T)^T = A$ and that the transpose of the sum is the sum of the transpose: $$ (A+B)^T = A^T + B^T $$\nFor the matrix-vector product of $n \\times d$ matrix $A$ with $d \\times 1$ vector $\\bar x$, we can observe that the elements of $\\bar x$ act as weights for each column of $A$\n$$ \\begin{bmatrix} a_{11} \u0026 a_{12} \\\\ a_{21} \u0026 a_{22} \\\\ a_{31} \u0026 a_{32} \\end{bmatrix} \\begin{bmatrix} x_1 \\ x_2 \\end{bmatrix} = \\begin{bmatrix} x_1 a_{11} + x_2 a_{12} \\\\ x_1 a_{21} + x_2 a_{22} \\\\ x_1 a_{31} + x_2 a_{32} \\end{bmatrix} $$\nAs a general form: $ A \\bar x = \\sum_{i=0}^{d} x_i \\bar a_i$\nNow, we define outer products which can be performed between vectors of different lengths\n$$ \\bar x \\bar y ^T = \\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3 \\end{bmatrix} \\begin{bmatrix} y_1 \u0026 y_2 \u0026 y_3 \\end{bmatrix}= \\begin{bmatrix} y_1x_1 \u0026 y_2x_1 \u0026 y_3x_1 \\\\ y_1x_2 \u0026 y_2x_2 \u0026 y_3x_2 \\\\ y_1x_3 \u0026 y_2x_3 \u0026 y_3x_3 \\\\ \\end{bmatrix} $$\nWe can also show that if the outer product between an $n\\times1$ vector is and a $1\\times d$ vector result in an $n\\times d$ matrix with the following properties: (i) Every row is a multiple of every other row, and (ii) every column is a multiple of every other column:\n$$ \\begin{bmatrix} a_1 \\\\ a_2 \\\\ \\vdots \\\\ a_n \\end{bmatrix}_{n \\times 1} \\begin{bmatrix} b_1 \u0026 b_2 \u0026 \\dots \u0026 b_d \\end{bmatrix}_{1 \\times d} = \\begin{bmatrix} a_1b_1 \u0026 a_1b_2 \u0026 \\dots \u0026 a_1b_d \\\\ a_2b_1 \u0026 a_2b_2 \u0026 \\dots \u0026 a_2b_d \\\\ \\vdots \u0026 \\ddots \u0026 \\ddots \u0026 \\vdots \\\\ a_nb_1 \u0026 a_nb_2 \u0026 \\dots \u0026 a_nb_d \\\\ \\end{bmatrix}_{n \\times d} $$\nIt is clear that each row $\\bar R_i = \\dfrac{\\bar R_j a_i}{a_j}$ and that each column $\\bar C_i = \\dfrac{\\bar C_j b_i}{b_j}$\nExercise: Let A be an $1000000 \\times 2$ matrix. Suppose you have to compute the $2 \\times 1000000$ matrix $A^T AA^T$ on a computer with limited memory. Would you prefer to compute $(A^T A)A^T$ or would you prefer to compute $A^T (AA^T)$?.\nSol:\n$$ \\begin{align*} (A^T A)A^T \u0026\\rightarrow (2 \\times 2) (2 \\times 1000000) \\ \\text{ [lower memory usage]} \\\\ A^T (AA^T) \u0026\\rightarrow (2 \\times 1000000) (1000000 \\times 1000000) \\end{align*} $$\nExercise: Let $D$ be an $n \\times d$ matrix for which each column sums to 0. Let $A$ be an arbitrary $d \\times d$ matrix. Show that the sum of each column of $DA$ is also zero.\nSol:\n$$ \\begin{align*} \\sum_{i=1}^{n} (DA)_{ij} = \\sum_{i=1}^{n} \\sum_{k=1}^{d} D_{ik} A_{kj} = \\sum_{k=1}^{d} A_{kj} \\sum_{i=1}^{n} D_{ik} = 0 \\end{align*} $$\nExercise: Show that $$(A_1A_2A_3 \\dots A_n)^T = A_n^T A_{n-1}^T \\dots A_{2}^T A_{1}^T$$\nSol:\n$$ (A_1A_2A_3 \\dots A_n)^T = A_n^T A_{n-2}^T (A_1A_2A_3 \\dots A_{n-2})^T = A_n^T A_{n-1}^T \\dots A_{2}^T A_{1} $$\nA matrix is called symmetric if it is square and equal to its transpose $$A=A^T$$\nExercise: If A and B are symmetric matrices, then show that AB is symmetric if and only if AB = BA\nSol:\n$$ AB = (AB)^T = B^T A^T = BA $$\n",
+  "wordCount" : "1437",
+  "inLanguage": "en",
+  "datePublished": "2024-07-19T00:00:00Z",
+  "dateModified": "2024-07-19T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "George Assaad"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/2024-07-19-la-01/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "George Assaad",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+ 
+
+
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="George Assaad">
+                <img src="http://localhost:1313/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">George Assaad</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Linear Algebra Part 01: Identities
+    </h1>
+    <div class="post-meta"><span title='2024-07-19 00:00:00 +0000 UTC'>19 July 2024</span>&nbsp;&middot;&nbsp;George Assaad
+
+</div>
+  </header> 
+  <div class="post-content"><p>Linear Algebra is so interesting and so fun. In this post, we are gonna explore some of its most important identities with proofs and also shed the light on some interesting and closely related results.</p>
+<h3 id="definitions-of-scalars-vector-and-matrices">Definitions of Scalars, Vector, and Matrices</h3>
+<ol>
+<li>Scalars: Scalars are numerical values from $\mathbb{R}$</li>
+<li>Vectors: Vectors are arrays of scalars where one of the dimensions is 1. A $1 \times d$ is called <em>a row vector</em>, whereas a $d \times 1$ is called a column vector. The entries in a vector are called <em>&ldquo;components&rdquo;</em>.</li>
+<li>Matrices: Matrices are the logical extension of vectors and can be thought of as rectangular arrays of scalars. To get an element inside the matrix, one has to define the row $i$ and column $j$ to obtain element $a_{ij}$ from matrix $A = [a_{ij}]_{n \times d}$</li>
+</ol>
+<h3 id="operations-with-scalars-and-vectors">Operations with Scalars and Vectors</h3>
+<p>Let 2 $d-$dimensional vectors be $\bar x = [x_1 \dots x_d]$ and $\bar y = [y_1 \dots y_d]$.
+They can be added component-wise as such:</p>
+<p>$$
+\bar x + \bar y =  [x_1 + y_1 \dots x_d + y_d]
+$$</p>
+<p>and subtracted in the same way</p>
+<p>$$
+\bar x - \bar y =  [x_1 - y_1 \dots x_d - y_d]
+$$</p>
+<p>A scalar $a$ can be multiplied by vector as such:</p>
+<p>$$
+a\bar x = [ax_1 \dots ax_d]
+$$</p>
+<p>The <em>dot product</em> is defined as the  sum of the component-wise multiplication:</p>
+<p>$$
+\bar x \cdot \bar y = \sum_{i=1}^{d} x_i y_i
+$$</p>
+<p>The Euclidean norm is defined in terms of the dot product</p>
+<p>$$
+\lVert \bar x \rVert^2 = \bar x \cdot \bar x = \sum_{i=1}^{d} x_i^2
+$$</p>
+<p>The Euclidean norm is called the $L_2$-norm which can be generalized to any $L_p$-norm as follows</p>
+<p>$$
+\lVert \bar x \rVert_p = \bar x \cdot \bar x = \left( \sum_{i=1}^{d} |x_i|^p \right)^{(1/p)}
+$$</p>
+<p>The dot product satisfies the <em>Cauchy-Schwarz inequality</em> which sets an upper bound for the value of the dot product</p>
+<p>$$
+\lvert \bar x \cdot \bar y \rvert \leq \lVert \bar x \rVert \lVert \bar y \rVert
+$$</p>
+<p><strong>Proof:</strong> Let $\bar x^\prime$ and $\bar y^\prime$ be unit vectors constructed from $\bar x$ and $\bar y$ such that
+$$
+\bar x^\prime = \dfrac{\bar x}{\lVert \bar x \rVert}
+$$
+and
+$$
+\bar y^\prime = \dfrac{\bar y}{\lVert \bar y \rVert}
+$$</p>
+<p>We show that $\lvert \bar x^\prime \cdot \bar y^\prime \rvert \leq 1$ by calculating $\lVert \bar x^\prime  - \bar y^\prime  \rVert^2$ and $\lVert \bar x^\prime  + \bar y^\prime  \rVert^2$ as such</p>
+<p>$$
+\begin{align*}
+\lVert \bar x^\prime  - \bar y^\prime  \rVert^2 &amp;= (\bar x^\prime  - \bar y^\prime) \cdot (\bar x^\prime  - \bar y^\prime) = \lVert \bar x^\prime  \rVert +  \lVert  \bar y^\prime  \rVert - 2 \bar x^\prime \cdot \bar y^\prime = 2  - 2 \bar x^\prime \cdot \bar y^\prime  \\
+\lVert \bar x^\prime  + \bar y^\prime  \rVert^2 &amp;= (\bar x^\prime  + \bar y^\prime) \cdot (\bar x^\prime  + \bar y^\prime) = \lVert \bar x^\prime  \rVert +  \lVert  \bar y^\prime  \rVert + 2 \bar x^\prime \cdot \bar y^\prime = 2 + 2 \bar x^\prime \cdot \bar y^\prime
+\end{align*}
+$$</p>
+<p>Since both $\lVert \bar x^\prime  - \bar y^\prime  \rVert^2$ and $\lVert \bar x^\prime  + \bar y^\prime  \rVert^2$ are nonnegative, then $\lvert \bar x^\prime \cdot \bar y^\prime \rvert \leq 1$</p>
+<p>Now, we scale the unit vectors to obtain the general inequality</p>
+<p>$$
+\begin{align*}
+\lvert \bar x^\prime \cdot \bar y^\prime \rvert &amp;\leq 1 \\
+\lVert \bar x \rVert \lVert \bar y \rVert \lvert \bar x^\prime \cdot \bar y^\prime \rvert &amp;\leq \lVert \bar x \rVert \lVert \bar y \rVert \\
+\lvert \bar x \cdot \bar y \rvert &amp;\leq \lVert \bar x \rVert \lVert \bar y \rVert
+\end{align*}
+$$</p>
+<p>Using the <em>Cauchy-Schwarz inequality</em>, we can also prove the triangle inequality which states that, in a triangle formed by $\bar x$ and $\bar y$, the side length of $\lVert \bar x - \bar y \rVert$ is no longer than the sum of the two other sides</p>
+<p>$$
+\lVert \bar x - \bar y \rVert \leq \lVert \bar x \rVert  + \lVert \bar y \rVert
+$$</p>
+<p><strong>Proof:</strong>
+Since both sides of the triangle inequality are nonnegative, we only need to show that it still holds after squaring both sides.</p>
+<p>$$
+\begin{align*}
+\lvert \bar x \cdot \bar y \rvert &amp;\leq \lVert \bar x \rVert \lVert \bar y \rVert \\
+-  \lVert \bar x \rVert \lVert \bar y \rVert &amp;\leq \bar x \cdot \bar y \leq \lVert \bar x \rVert \lVert \bar y \rVert \\
+\bar x \cdot \bar y  &amp;\geq  -  \lVert \bar x \rVert \lVert \bar y \rVert \\
+-2\bar x \cdot \bar y &amp;\leq  2 \lVert \bar x \rVert \lVert \bar y \rVert \\
+\lVert \bar x \rVert^2 + \lVert \bar y \rVert^2 -2\bar x \cdot \bar y &amp;\leq \lVert \bar x \rVert^2 + \lVert \bar y \rVert^2+  2 \lVert \bar x \rVert \lVert \bar y \rVert \\
+(\bar x - \bar y) \cdot (\bar x - \bar y) &amp;\leq (\lVert \bar x \rVert +\lVert \bar y \rVert)^2 \\
+(\lVert \bar x - \bar y \rVert)^2 &amp;\leq (\lVert \bar x \rVert  + \lVert \bar y \rVert)^2
+\end{align*}
+$$</p>
+<h3 id="operations-with-vectors-and-matrices">Operations with Vectors and Matrices</h3>
+<p>The transpose of a matrix is obtained by flipping its rows and columns such that the $(i, j)th$ entry of the transpose is the same as the $(j, i)th$ entry of the original matrix.
+Therefore, the transpose of an $n \times d$ matrix is a $d \times n$ matrix. The transpose of a matrix $A$ is denoted by $A^T$. An example of the transpose of $A$ is shown:</p>
+<p>$$
+\begin{bmatrix}
+a_{11} &amp; a_{12} \\
+a_{21} &amp; a_{22}
+\end{bmatrix}^T =
+\begin{bmatrix}
+a_{11} &amp; a_{21} \\
+a_{12} &amp; a_{22}
+\end{bmatrix}
+$$</p>
+<p>It immediately follows that $(A^T)^T = A$ and that the transpose of the sum is the sum of the transpose:
+$$
+(A+B)^T = A^T + B^T
+$$</p>
+<p>For the matrix-vector product of $n \times d$ matrix $A$ with $d \times 1$ vector $\bar x$, we can observe that the elements of $\bar x$ act as weights for each column of $A$</p>
+<p>$$
+\begin{bmatrix}
+a_{11} &amp; a_{12} \\
+a_{21} &amp; a_{22} \\
+a_{31} &amp; a_{32}
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \
+x_2
+\end{bmatrix} =
+\begin{bmatrix}
+x_1 a_{11} + x_2 a_{12} \\
+x_1 a_{21} + x_2 a_{22} \\
+x_1 a_{31} + x_2 a_{32}
+\end{bmatrix}
+$$</p>
+<p>As a general form: $ A \bar x = \sum_{i=0}^{d} x_i \bar a_i$</p>
+<p>Now, we define outer products which can be performed between vectors of different lengths</p>
+<p>$$
+\bar x \bar y ^T =
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix}
+\begin{bmatrix}
+y_1 &amp; y_2 &amp; y_3
+\end{bmatrix}=
+\begin{bmatrix}
+y_1x_1 &amp; y_2x_1 &amp; y_3x_1 \\
+y_1x_2 &amp; y_2x_2 &amp; y_3x_2 \\
+y_1x_3 &amp; y_2x_3 &amp; y_3x_3 \\
+\end{bmatrix}
+$$</p>
+<p>We can also show that if the outer product between an $n\times1$ vector is and a $1\times d$ vector result in an $n\times d$
+matrix with the following properties: (i) Every row is a multiple of every other row, and (ii) every column is a multiple of every other column:</p>
+<p>$$
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+\vdots \\
+a_n
+\end{bmatrix}_{n \times 1}
+\begin{bmatrix}
+b_1 &amp;
+b_2 &amp;
+\dots &amp;
+b_d
+\end{bmatrix}_{1 \times d} =
+\begin{bmatrix}
+a_1b_1 &amp; a_1b_2 &amp; \dots &amp; a_1b_d \\
+a_2b_1 &amp; a_2b_2 &amp; \dots &amp; a_2b_d \\
+\vdots &amp; \ddots &amp; \ddots &amp; \vdots \\
+a_nb_1 &amp; a_nb_2 &amp; \dots &amp; a_nb_d  \\
+\end{bmatrix}_{n \times d}
+$$</p>
+<p>It is clear that each row $\bar R_i = \dfrac{\bar R_j a_i}{a_j}$ and that each column $\bar C_i = \dfrac{\bar C_j b_i}{b_j}$</p>
+<p><strong>Exercise:</strong> Let A be an $1000000 \times 2$ matrix. Suppose you have to compute the $2 \times 1000000$ matrix $A^T AA^T$ on a computer with limited memory. Would you prefer to compute $(A^T A)A^T$ or would you prefer to compute $A^T (AA^T)$?.</p>
+<p><strong>Sol:</strong></p>
+<p>$$
+\begin{align*}
+(A^T A)A^T &amp;\rightarrow (2 \times 2) (2 \times 1000000)  \ \text{ [lower memory usage]} \\
+A^T (AA^T) &amp;\rightarrow (2 \times 1000000) (1000000 \times 1000000)
+\end{align*}
+$$</p>
+<p><strong>Exercise:</strong> Let $D$ be an $n \times d$ matrix for which each column sums to 0. Let $A$ be an arbitrary $d \times d$ matrix. Show that the sum of each column of $DA$ is also zero.</p>
+<p><strong>Sol:</strong></p>
+<p>$$
+\begin{align*}
+\sum_{i=1}^{n} (DA)_{ij} = \sum_{i=1}^{n} \sum_{k=1}^{d} D_{ik} A_{kj} = \sum_{k=1}^{d} A_{kj} \sum_{i=1}^{n}  D_{ik} = 0
+\end{align*}
+$$</p>
+<p><strong>Exercise:</strong> Show that $$(A_1A_2A_3 \dots A_n)^T = A_n^T A_{n-1}^T  \dots  A_{2}^T A_{1}^T$$</p>
+<p><strong>Sol:</strong></p>
+<p>$$
+(A_1A_2A_3 \dots A_n)^T = A_n^T A_{n-2}^T (A_1A_2A_3 \dots A_{n-2})^T = A_n^T A_{n-1}^T  \dots  A_{2}^T A_{1}
+$$</p>
+<p>A matrix is called symmetric if it is square and equal to its transpose $$A=A^T$$</p>
+<p><strong>Exercise:</strong> If A and B are symmetric matrices, then show that AB is symmetric if
+and only if AB = BA</p>
+<p><strong>Sol:</strong></p>
+<p>$$
+AB = (AB)^T = B^T A^T = BA
+$$</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/misc/">Misc</a></li>
+      <li><a href="http://localhost:1313/tags/math/">Math</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

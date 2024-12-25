@@ -1,0 +1,124 @@
+baseURL: "https://0xgeorgeassaad.tech/" 
+title: George Assaad
+theme: PaperMod
+enableEmoji: true
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+
+taxonomies:
+    tag: tags
+
+menu:
+    main:
+        #- name: Books
+        #  url: books/
+        #  weight: 5 
+        #- name: Papers
+        #  url: papers/
+        #  weight: 2
+        #- name: Courses
+        #  url: courses/
+        #  weight: 3
+        - name: About
+          url: about/
+          weight: 3
+        - name: Posts
+          url: posts/
+          weight: 4 
+
+
+params:
+    description: "George Assaad's website"
+    author: George Assaad
+    # googleAnalyticsID: "G-XXXXX"
+    DateFormat: "2 January 2006"
+    defaultTheme: light
+    hideFooter: true
+    disableThemeToggle: true
+    ShowShareButtons: false
+    ShowReadingTime: false
+    disableSpecial1stPost: true
+    disableAnchoredHeadings: true
+    ShowPostNavLinks: false
+    ShowBreadCrumbs: false
+    ShowCodeCopyButtons: true
+    ShowAllPagesInArchive: false
+    MainSections: ["books","courses","papers","posts"]
+    ShowToc: false
+    disableScrollToTop: true
+    TocOpen: true
+    ShowWordCount: false
+    UseHugoToc: true
+    comments: false
+    math: true
+    profileMode:
+          enabled: true
+          title: George Assaad
+          subtitle: "A night owl interested in deep learning"
+          imageUrl: "Me_Berlin.jpeg"
+          imageWidth: 260
+          imageHeight: 280
+          buttons:
+            #- name: Papers
+            #  url: papers/
+            #- name: Courses
+            #  url: courses/
+            - name: About
+              url: about/
+            - name: Posts
+              url: posts/
+            #- name: Books
+            #  url: books/
+            - name: Tags
+              url: tags/
+            #- name: Archive
+            #  url: archive/
+            #- name: Blog
+            #  url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
+
+    socialIcons:
+        #- name: CV
+        #  url: cv.pdf
+        - name: Email
+          url: mailto:0xgeorgeassaad@gmail.com
+        - name: LinkedIn
+          url: https://www.linkedin.com/in/0xgeorgeassaad/
+        #- name: Zoom
+        #  url: https://www.zoom.us/
+        #- name: Location
+        #  url: location/
+        #- name: Office Hours
+        #  url: officehours/
+        #- name: Google Scholar
+        #  url: https://scholar.google.com/
+        - name: GitHub
+          url: https://github.com/0xgeorgeassaad/
+        #- name: YouTube
+        #  url: https://www.youtube.com/
+        #- name: Twitter
+        #  url: https://x.com/0xgeorgeassaad/
+
+    assets:
+        disableScrollBarStyle: true
+    cover:
+        hiddenInList: true
+        hiddenInSingle: true
+    label:
+      text: "George Assaad"
+      icon: favicon.ico
+      iconHeight: 18
+
+markup:
+    
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        guessSyntax: true
+        style: autumn 
+    tableOfContents:
+        endLevel: 2
+        ordered: false
+        startLevel: 2
+
