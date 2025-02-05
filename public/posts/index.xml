@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on George Assaad</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on George Assaad</description>
+    <image>
+      <title>George Assaad</title>
+      <url>http://localhost:1313/thumbnail.png</url>
+      <link>http://localhost:1313/thumbnail.png</link>
+    </image>
+    <generator>Hugo -- 0.140.1</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear Algebra Part 01: Identities</title>
+      <link>http://localhost:1313/posts/2024-07-19-la-01/</link>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2024-07-19-la-01/</guid>
+      <description>Fundamental identities of Linear Algebra.</description>
+    </item>
+    <item>
+      <title>Reimplementing python&#39;s heapq module</title>
+      <link>http://localhost:1313/posts/2024-05-28-python-heapq/</link>
+      <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2024-05-28-python-heapq/</guid>
+      <description>Reimplementing python&amp;rsquo;s heapq module using pure python.</description>
+    </item>
+  </channel>
+</rss>
