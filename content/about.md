@@ -16,7 +16,7 @@ I hope to join a great Ph.D. program next year :upside_down_face:.
 
 You can find contact info to reach out to me [in the homepage](/).
 
-I can't think of more to add to the description. So, here is the the Karush–Kuhn–Tucker (KKT) conditions[^1] until I find a good one.
+I can't think of more to add to the description. So, here is the Karush–Kuhn–Tucker (KKT) conditions[^1] until I find a good one.
 
 $$
 \begin{aligned}
