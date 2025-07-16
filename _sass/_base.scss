@@ -14,6 +14,14 @@ html {
 // }
 
 
+body {
+  font-family: "Outfit", sans-serif;
+  // font-size: 21.5px;
+  // font-weight: 400;
+}
+
+
+
 p,
 h1,
 h2,
@@ -907,6 +915,7 @@ code {
   border-radius: 3px;
   padding: 3px 3px;
 }
+
 
 // Transitioning Themes
 html.transition,
