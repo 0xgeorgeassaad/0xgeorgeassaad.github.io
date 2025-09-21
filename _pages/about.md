@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: A night owl interested in deep learning
+subtitle: Computer Science PhD student at <a href="https://www.clemson.edu/">Clemson University</a>
 
 profile:
   align: right
@@ -32,7 +32,7 @@ latest_posts:
 Hi there! I am an aspiring machine learning (ML) researcher who loves to tinker with deep learning models to make them more fun.
 
 
-I hope to join a great Ph.D. program ~~next~~ this year :upside_down_face:.
+I hope to join a great Ph.D. program ~~next~~ this year :upside_down_face: (I did).
 
 
 You can find my contact info to reach out [down below](#social-section).
